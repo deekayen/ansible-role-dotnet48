@@ -30,7 +30,7 @@ Example Install
 ---------------
 
     TASK [deekayen.dotnet48 : Install Microsoft .NET Framework 4.8.] ************
-    ok: [10.0.0.100] => {"changed": false, "name": "https://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe"}
+    ok: [10.0.0.100] => {"changed": false, "name": "https://download.visualstudio.microsoft.com/download/pr/2d6bb6b2-226a-4baa-bdec-798822606ff1/8494001c276a4b96804cde7829c04d7f/ndp48-x86-x64-allos-enu.exe"}
 
     TASK [deekayen.dotnet48 : debug] **********************************************
     ok: [10.0.0.100] => {

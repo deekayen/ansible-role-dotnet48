@@ -1,16 +1,15 @@
 ---
 
-# https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-8-offline-installer-for-windows-9d23f658-3b97-68ab-d013-aa3c3e7495e0
 - name: "Install Microsoft .NET Framework 4.8."
   ansible.windows.win_package:
     path: "{{ ndp_install_url }}"
-    product_id: "{26784146-6E05-3FF9-9335-786C7C0FB5BE}"
+    product_id: "{16735AF7-1D8D-3681-94A5-C578A61EC832}"
     arguments: '/qn'
   register: dotnet48_installer
   when: dotnet48_uninstall is not defined or not dotnet48_uninstall
 
 - name: "Uninstall Microsoft .NET Framework 4.8."  # noqa no-changed-when
-  ansible.builtin.raw: Start-Process "C:\Windows\System32\msiexec.exe" -ArgumentList "/x {26784146-6E05-3FF9-9335-786C7C0FB5BE} /qn" -Wait
+  ansible.builtin.raw: Start-Process "C:\Windows\System32\msiexec.exe" -ArgumentList "/x {16735AF7-1D8D-3681-94A5-C578A61EC832} /qn" -Wait
   register: dotnet48_installer
   when: dotnet48_uninstall is defined and dotnet48_uninstall
 

@@ -1,3 +1,8 @@
 ---
 
-ndp_install_url: https://download.microsoft.com/download/4/b/2/4b21528a-8944-4a9e-b9d4-6474125e540c/NDP481-x86-x64-AllOS-ENU.exe
+# Offline 4.8 installer:
+# https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-8-offline-installer-for-windows-9d23f658-3b97-68ab-d013-aa3c3e7495e0
+
+# When someone learns the 4.8.1 ProductCode, we can update to 4.8.1:
+# https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481
+ndp_install_url: https://download.visualstudio.microsoft.com/download/pr/2d6bb6b2-226a-4baa-bdec-798822606ff1/8494001c276a4b96804cde7829c04d7f/ndp48-x86-x64-allos-enu.exe
