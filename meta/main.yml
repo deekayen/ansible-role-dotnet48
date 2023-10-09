@@ -10,7 +10,7 @@ galaxy_info:
   github_branch: main
   issue_tracker_url: https://github.com/deekayen/ansible-role-dotnet48/issues
 
-  min_ansible_version: 2.9
+  min_ansible_version: '2.9'
 
   platforms:
     - name: Windows
@@ -22,3 +22,6 @@ galaxy_info:
     - windows
 
 dependencies: []
+
+collections:
+  - ansible.windows
