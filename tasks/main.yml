@@ -1,0 +1,30 @@
+---
+
+- block:
+
+  # https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-8-offline-installer-for-windows-9d23f658-3b97-68ab-d013-aa3c3e7495e0
+  - name: "Install Microsoft .NET Framework 4.8."
+    win_package:
+      path: "https://download.visualstudio.microsoft.com/download/pr/2d6bb6b2-226a-4baa-bdec-798822606ff1/8494001c276a4b96804cde7829c04d7f/ndp48-x86-x64-allos-enu.exe"
+      product_id: "{26784146-6E05-3FF9-9335-786C7C0FB5BE}"
+    register: dotnet48_exe
+
+  - name: "Debug: Install output."
+    debug:
+      var: dotnet48_exe
+      verbosity: 1
+
+  when: dotnet48_uninstall is not defined or not dotnet48_uninstall
+
+- block:
+
+  - name: "Uninstall Microsoft .NET Framework 4.8."
+    raw: Start-Process "C:\Windows\System32\msiexec.exe" -ArgumentList "/x {26784146-6E05-3FF9-9335-786C7C0FB5BE} /qn" -Wait
+    register: dotnet452_removed
+
+  - name: "Debug: Uninstall output."
+    debug:
+      var: dotnet48_removed
+      verbosity: 1
+
+  when: dotnet48_uninstall is defined and dotnet48_uninstall

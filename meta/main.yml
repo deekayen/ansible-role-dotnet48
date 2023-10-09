@@ -1,0 +1,24 @@
+---
+
+galaxy_info:
+  role_name: dotnet48
+  namespace: deekayen
+  author: David Norman
+  description: Install (or uninstall) Microsoft .NET Framework 4.8.
+  license: BSD
+
+  github_branch: main
+  issue_tracker_url: https://github.com/deekayen/ansible-role-dotnet48/issues
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Windows
+      versions:
+        - all
+
+  galaxy_tags:
+    - dotnet
+    - windows
+
+dependencies: []
