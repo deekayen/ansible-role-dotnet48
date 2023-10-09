@@ -1,0 +1,4 @@
+---
+
+- name: Install reboot
+  ansible.windows.win_reboot:

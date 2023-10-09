@@ -6,6 +6,7 @@
     product_id: "{16735AF7-1D8D-3681-94A5-C578A61EC832}"
     arguments: '/qn'
   register: dotnet48_installer
+  notify: Install reboot
   when: dotnet48_uninstall is not defined or not dotnet48_uninstall
 
 - name: "Uninstall Microsoft .NET Framework 4.8."  # noqa no-changed-when
