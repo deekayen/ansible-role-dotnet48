@@ -1,6 +1,6 @@
 .NET Framework 4.8
 ====================
-[![CI](https://github.com/deekayen/ansible-role-dotnet48/actions/workflows/ci.yml/badge.svg)](https://github.com/deekayen/ansible-role-dotnet48/actions/workflows/ci.yml) [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+[![CI](https://github.com/deekayen/ansible-role-dotnet48/actions/workflows/ci.yml/badge.svg)](https://github.com/deekayen/ansible-role-dotnet48/actions/workflows/ci.yml) [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 Install (or uninstall) Microsoft .NET Framework 4.8 on Windows.
 
@@ -64,6 +64,8 @@ Example Uninstall
     }
 
 ### Caveat
+
+I had trouble locating the product_id for the 4.8 or 4.8.1 installers. The one listed in the install task is for 4.5.2 - maybe 4.8 uses the same product id?
 
 Uninstalling .NET Framework on Windows 2008R2 will break Ansible's ability to invoke Powershell. You won't be able to reconnect with Ansible to the remote host until you re-install .NET Framework by some other means than this role.
 
