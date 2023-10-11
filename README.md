@@ -65,7 +65,7 @@ Example Uninstall
 
 ### Caveat
 
-I had trouble locating the product_id for the 4.8 or 4.8.1 installers. The one listed in the install task is for 4.5.2 - maybe 4.8 uses the same product id?
+I had trouble locating the product_id for the 4.8 or 4.8.1 installers. The one listed in the install task is for 4.8 instead of the latest 4.8.1, so this won't leave you with the latest KBs. You'll need the [KB5011048](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5011048) that matches your system config.
 
 Uninstalling .NET Framework on Windows 2008R2 will break Ansible's ability to invoke Powershell. You won't be able to reconnect with Ansible to the remote host until you re-install .NET Framework by some other means than this role.
 
