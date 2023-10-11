@@ -2,7 +2,6 @@
 
 galaxy_info:
   role_name: dotnet48
-  namespace: deekayen
   author: David Norman
   description: Install (or uninstall) Microsoft .NET Framework 4.8.
   license: BSD
