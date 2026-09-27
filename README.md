@@ -24,7 +24,9 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: deekayen.dotnet48, dotnet48_uninstall: false }
+         - role: deekayen.dotnet48
+           vars:
+             dotnet48_uninstall: false
 
 Example Install
 ---------------
@@ -40,7 +42,7 @@ Example Install
         }
     }
 
-Because the uninstall task uses Ansible's `raw` module, the play output will always report `ok` status instead of `changed`. The playbook may also complete before the msiexec process has completely finished uninstalling the framework.
+Because the uninstall task uses Ansible's `raw` module, it always reports `changed`. The playbook may also complete before the msiexec process has completely finished uninstalling the framework.
 
 ### Windows 2008R2
 

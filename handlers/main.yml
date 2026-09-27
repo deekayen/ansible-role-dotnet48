@@ -1,4 +1,3 @@
 ---
-
-- name: Install reboot
+- name: Reboot after the .NET install.
   ansible.windows.win_reboot:

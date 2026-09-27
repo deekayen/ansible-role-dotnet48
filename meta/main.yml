@@ -1,26 +1,26 @@
 ---
-
 galaxy_info:
+  namespace: deekayen
   role_name: dotnet48
   author: David Norman
   description: Install (or uninstall) Microsoft .NET Framework 4.8.
-  license: BSD
 
   github_branch: main
   issue_tracker_url: https://github.com/deekayen/ansible-role-dotnet48/issues
 
-  min_ansible_version: '2.9'
+  license: BSD-3-Clause
+  min_ansible_version: "2.15"
 
   platforms:
     - name: Windows
       versions:
-        - all
+        - "2016"
+        - "2019"
+        - "2022"
+        - "2025"
 
   galaxy_tags:
     - dotnet
     - windows
 
 dependencies: []
-
-collections:
-  - ansible.windows

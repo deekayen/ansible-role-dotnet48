@@ -1,18 +1,20 @@
 ---
-
-- name: "Install Microsoft .NET Framework 4.8."
+- name: Install Microsoft .NET Framework 4.8.
   ansible.windows.win_package:
     path: "{{ ndp_install_url }}"
     product_id: "{16735AF7-1D8D-3681-94A5-C578A61EC832}"
     arguments: '/qn'
   register: dotnet48_installer
-  notify: Install reboot
-  when: dotnet48_uninstall is not defined or not dotnet48_uninstall
+  notify: Reboot after the .NET install.
+  when: not dotnet48_uninstall | bool
 
-- name: "Uninstall Microsoft .NET Framework 4.8."  # noqa no-changed-when
-  ansible.builtin.raw: Start-Process "C:\Windows\System32\msiexec.exe" -ArgumentList "/x {16735AF7-1D8D-3681-94A5-C578A61EC832} /qn" -Wait
+- name: Uninstall Microsoft .NET Framework 4.8.
+  ansible.builtin.raw: >-
+    Start-Process "C:\Windows\System32\msiexec.exe"
+    -ArgumentList "/x {16735AF7-1D8D-3681-94A5-C578A61EC832} /qn" -Wait
   register: dotnet48_installer
-  when: dotnet48_uninstall is defined and dotnet48_uninstall
+  changed_when: true
+  when: dotnet48_uninstall | bool
 
 - name: "Debug: Installer output."
   ansible.builtin.debug:

@@ -1,0 +1,14 @@
+---
+argument_specs:
+  main:
+    short_description: Install (or uninstall) Microsoft .NET Framework 4.8.
+    description:
+      - Installs .NET Framework 4.8 from Microsoft's offline installer and
+        reboots, or removes it.
+    author:
+      - David Norman
+    options:
+      dotnet48_uninstall:
+        type: bool
+        default: false
+        description: Uninstall the framework instead of installing it.
